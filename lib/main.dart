@@ -6,24 +6,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: new Text('Flutter Layout Demo'),
-        ),
-        body: Center(
-          child: 
-            new Text('Hello World'),
-           // new Image.asset("1.png"),
-            //Icon(Icons.star,
-           // color: Colors.red),
-           ),
-      ),
-    );
+  return Container(
+decoration: BoxDecoration( color: Colors.white),
+child: Center(
+  child: Text("Hello World", textDirection: TextDirection.ltr, style: TextStyle(fontSize: 32, color: Colors.black87,),),
+),
+  );
   }
 }
 /*

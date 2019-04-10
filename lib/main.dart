@@ -16,8 +16,12 @@ class MyApp extends StatelessWidget {
           title: new Text('Flutter Layout Demo'),
         ),
         body: Center(
-          child: new Text('Hello World'),
-        ),
+          child: 
+            new Text('Hello World'),
+           // new Image.asset("1.png"),
+            //Icon(Icons.star,
+           // color: Colors.red),
+           ),
       ),
     );
   }

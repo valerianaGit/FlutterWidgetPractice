@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
-
+//import 'productivity.dart';
 void main() {
   debugPaintSizeEnabled = false; // Set to true for visual layout
   runApp(MyApp());
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: buildHomePage('Strawberry Pavlova Recipe'),
-    );
+    );  
   }
 
   Widget buildHomePage(String title) {
     final titleText = Container(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(0),
       child: Text(
         'Strawberry Pavlova',
         style: TextStyle(
@@ -119,15 +119,21 @@ class MyApp extends StatelessWidget {
     );
     // #enddocregion iconList
 
+final routingButton = Center( 
+  child: RaisedButton(
+child:  Text('Productivity this way!'),
+),);
+
     // #docregion leftColumn
     final leftColumn = Container(
-      padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Column(
         children: [
           titleText,
           subTitle,
           ratings,
           iconList,
+          routingButton,
         ],
       ),
     );
@@ -137,10 +143,16 @@ class MyApp extends StatelessWidget {
       'images/pavlova.jpg',
       fit: BoxFit.cover,
     );
-
+/*void _pushToCategories() {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => productivityCell()),);
+}*/
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+       /* actions: <Widget>[
+          new IconButton(
+              icon: const Icon(Icons.satellite), onPressed: _pushToCategories),
+        ],*/
       ),
       // #docregion body
       body: Center(
@@ -152,7 +164,7 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  width: 440,
+                  width: 400,
                   child: leftColumn,
                 ),
                 mainImage,
